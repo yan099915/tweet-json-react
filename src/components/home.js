@@ -31,8 +31,9 @@ const Home = ()=> {
         data = data.join("&")
 
         // http request into back end API
-        const { BACK_END_URL } = process.env;
-        fetch('http://localhost:3001/app',{
+        const BASE_URL = process.env.REACT_APP_BE_URL;
+
+        fetch(BASE_URL,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
